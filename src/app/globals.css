@@ -1,6 +1,6 @@
 .submit{
   margin-top: 10px;
-  width: 50%;
+  width: 30%;
 }
 
 .input{
@@ -10,7 +10,7 @@
 
 form{
   margin-top: 100px;
-  width: 500px;
+  width: 300px;
   margin-left: auto;
   margin-right: auto;
   
@@ -26,6 +26,6 @@ form{
   color: aliceblue;
 }
 
-body{
+/* body{
   background-image: url('test.jpg');
-}
+} */
