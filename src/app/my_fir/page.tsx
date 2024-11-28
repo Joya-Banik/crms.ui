@@ -4,18 +4,16 @@ import { Button, Dialog, TextField } from "@mui/material"
 import { useRouter } from 'next/navigation'
 import { useState } from "react"
 
-export default function Accused() {
+export default function My_Fir() {
     const router = useRouter();
     return(<div className="top-border horizontal">
         <div>
         <form > 
-            <h2>Add or Edit Accused</h2>
-            <TextField required className='input' label="Accused ID"> </TextField>
-            <TextField required className='input' label="Accused Name"></TextField>
-            <TextField required className='input' label="Gender"></TextField>
-            <TextField required className='input' label="Age"></TextField>
-            <TextField required className='input' label="Status"></TextField>
-
+            <h2>Add or Edit FIR</h2>
+            <TextField required className='input' label="Inscident Date"> </TextField>
+            <TextField required className='input' label="Inscident Time"></TextField>
+            <TextField required className='input' label="Place"></TextField>
+            <TextField required className='input' label='Case Details' multiline minRows={3}></TextField>
             <TextField label="Accused(Optional)" className='input'></TextField>
 
             <Button className='submit' variant='outlined'>Cancel</Button>
@@ -25,15 +23,15 @@ export default function Accused() {
         
         <div className="table-view">
             <div className="horizontal">
-            <h2>List of Accused</h2>
+            <h2>List of FIR</h2>
         </div>
         <table>
             <tr className="thead">
-                <td>Accused ID</td>
-                <td>Accused name</td>
-                <td>Gender</td>
-                <td>Age</td>
-                <td>Status</td>
+                <td>Fir ID</td>
+                <td>Date LOdged</td>
+                <td>Incident Date</td>
+                <td>Incident Place</td>
+                <td>Incident Time</td>
             </tr>
            
         </table>
