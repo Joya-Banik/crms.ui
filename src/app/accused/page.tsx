@@ -1,28 +1,53 @@
 'use client'
 
-import { Button, Dialog, TextField } from "@mui/material"
-import { useRouter } from 'next/navigation'
-import { useState } from "react"
+import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material"
+
+import { useEffect, useState } from "react"
 
 export default function Accused() {
-    const router = useRouter();
+    const [name, setName] = useState('');
+    const [gender, setGender] = useState(0);
+    const [age, setAge] = useState(0);
+    const [status, setStatus] = useState(''); 
+    
+    useEffect(() => {fetchAccused()}, []);
+    
+    const saveAccused = () =>{
+        let accused = {
+            id : 0,
+            gender : gender,
+            age : age,
+            status : status
+        }
+    }
+
+    const fetchAccused = async() => {
+
+    } 
+
     return(<div className="top-border horizontal">
         <div>
         <form > 
             <h2>Add or Edit Accused</h2>
-            <TextField required className='input' label="Accused ID"> </TextField>
-            <TextField required className='input' label="Accused Name"></TextField>
-            <TextField required className='input' label="Gender"></TextField>
-            <TextField required className='input' label="Age"></TextField>
-            <TextField required className='input' label="Status"></TextField>
-
+            <TextField required className='input' value={name} onChange={(e) => {setName(e.target.value)}} label="Accused Name"></TextField>
+            <br></br> <br></br>
+            <FormControl className="input">
+                <InputLabel>Gender</InputLabel>
+                <Select required  value={gender} onChange={(e) => {setGender(Number(e.target.value))}} label="Gender">
+                <MenuItem value={1}>Male</MenuItem>
+                <MenuItem value={2}>Female</MenuItem>
+            </Select>
+            </FormControl>
+            <br></br> <br></br>
+            <TextField required className='input' type="number" value={age} onChange={(e) => {setAge(Number(e.target.value))}} label="Age"></TextField>
+            <br></br> <br></br>
+            <TextField required className='input' value={status} onChange={(e) => {setStatus(e.target.value)}} label="Status"></TextField>
+            <br></br><br></br>
             <TextField label="Accused(Optional)" className='input'></TextField>
-
-            <Button className='submit' variant='outlined'>Cancel</Button>
-            <Button className='submit' variant='contained'>Save</Button>
+            <br></br><br></br>
+            <Button className='submit' onClick={() => {saveAccused()}} variant='contained'>Save</Button>
         </form> 
         </div >
-        
         <div className="table-view">
             <div className="horizontal">
             <h2>List of Accused</h2>
@@ -35,7 +60,6 @@ export default function Accused() {
                 <td>Age</td>
                 <td>Status</td>
             </tr>
-           
         </table>
         </div>
     </div>)

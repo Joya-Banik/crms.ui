@@ -36,9 +36,7 @@ export default function Navbar() {
         <Toolbar>
         {
             <div>
-            <Link className="nav-btn" href='/petitioner'>Petitioner</Link>
             <Link className="nav-btn" href='/fir'>FIR</Link>
-            <Link className="nav-btn" href='/case_list'>Case</Link>
             <Link className="nav-btn" href='/accused'>Accused</Link>
           </div> 
           }
